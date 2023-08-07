@@ -27,7 +27,7 @@ function pickUp(evt) {
 
     const currentLink = evt.target.closest('.gallery_link');
     const instance = basicLightbox.create(
-        `<img src="${currentLink.href}" width="800" height="600">`,
+        `<img src="${currentLink.href}" width="500" height="500">`,
         {
             onShow: () => document.addEventListener('keydown', closeModalWindow),
         })
