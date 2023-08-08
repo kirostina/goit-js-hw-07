@@ -18,18 +18,21 @@ function createMarkup(arr) {
 }
 
 function pickUp(evt) {
+
+    evt.preventDefault();
+
     if (evt.target === evt.currentTarget) {
         return
     }
 
 
-    evt.preventDefault();
 
     const currentLink = evt.target.closest('.gallery_link');
     const instance = basicLightbox.create(
         `<img src="${currentLink.href}" width="500" height="500">`,
         {
             onShow: () => document.addEventListener('keydown', closeModalWindow),
+            onClose: () => document.removeEventListener('keydown', closeModalWindow)
         })
     
     instance.show();

@@ -12,7 +12,7 @@ const images = galleryItems.map(
     .join('');
 gallery.insertAdjacentHTML('beforeend', images);
 
-new SimpleLightbox('.gallery a', {
+const instance = new SimpleLightbox('.gallery a', {
     captionsData: "alt",
     captionPosition: "bottom",
     captionDelay: 250,
